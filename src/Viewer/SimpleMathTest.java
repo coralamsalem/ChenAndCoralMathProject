@@ -19,13 +19,6 @@ public class SimpleMathTest extends JFrame  {
     private JTextArea que5firstNum;
     private JTextArea que6secondNum;
     private JTextArea que6firstNum;
-    private JComboBox Sign6;
-    private JComboBox Sign5;
-    private JComboBox Sign4;
-    private JComboBox Sign3;
-    private JComboBox Sign2;
-    private JComboBox Sign1;
-    private JComboBox Sign7;
     private JTextArea que7secondNum;
     private JTextArea que7firstNum;
     private JTextField ans1;
@@ -74,168 +67,113 @@ public class SimpleMathTest extends JFrame  {
         return que1firstNum;
     }
 
-    public void setQue1firstNum(JTextArea que1firstNum) {
-        this.que1firstNum = que1firstNum;
+    public void setQue1firstNum(int que1firstNum) {
+        this.que1firstNum.setText(Integer.toString(que1firstNum));
     }
 
     public JTextArea getQue1secondNum() {
         return que1secondNum;
     }
 
-    public void setQue1secondNum(JTextArea que1secondNum) {
-        this.que1secondNum = que1secondNum;
+    public void setQue1secondNum(int que1secondNum) {
+        this.que1secondNum.setText(Integer.toString(que1secondNum));
     }
 
     public JTextArea getQue2firstNum() {
         return que2firstNum;
     }
 
-    public void setQue2firstNum(JTextArea que2firstNum) {
-        this.que2firstNum = que2firstNum;
+    public void setQue2firstNum(int que2firstNum) {
+        this.que2firstNum.setText(Integer.toString(que2firstNum));
     }
 
     public JTextArea getQue2secondNum() {
         return que2secondNum;
     }
 
-    public void setQue2secondNum(JTextArea que2secondNum) {
-        this.que2secondNum = que2secondNum;
+    public void setQue2secondNum(int que2secondNum) {
+        this.que2secondNum.setText(Integer.toString(que2secondNum));
     }
 
     public JTextArea getQue3secondNum() {
         return que3secondNum;
     }
 
-    public void setQue3secondNum(JTextArea que3secondNum) {
-        this.que3secondNum = que3secondNum;
+    public void setQue3secondNum(int que3secondNum) {
+        this.que3secondNum.setText(Integer.toString(que3secondNum));
     }
 
     public JTextArea getQue3firstNum() {
         return que3firstNum;
     }
 
-    public void setQue3firstNum(JTextArea que3firstNum) {
-        this.que3firstNum = que3firstNum;
+    public void setQue3firstNum(int que3firstNum) {
+        this.que3firstNum.setText(Integer.toString(que3firstNum));
     }
 
     public JTextArea getQue4secondNum() {
         return que4secondNum;
     }
 
-    public void setQue4secondNum(JTextArea que4secondNum) {
-        this.que4secondNum = que4secondNum;
+    public void setQue4secondNum(int que4secondNum) {
+        this.que4secondNum.setText(Integer.toString(que4secondNum));
     }
 
     public JTextArea getQue4firstNum() {
         return que4firstNum;
     }
 
-    public void setQue4firstNum(JTextArea que4firstNum) {
-        this.que4firstNum = que4firstNum;
+    public void setQue4firstNum(int que4firstNum) {
+        this.que4firstNum.setText(Integer.toString(que4firstNum));
     }
 
     public JTextArea getQue5secondNum() {
         return que5secondNum;
     }
 
-    public void setQue5secondNum(JTextArea que5secondNum) {
-        this.que5secondNum = que5secondNum;
+    public void setQue5secondNum(int que5secondNum) {
+        this.que5secondNum.setText(Integer.toString(que5secondNum));
     }
 
     public JTextArea getQue5firstNum() {
         return que5firstNum;
     }
 
-    public void setQue5firstNum(JTextArea que5firstNum) {
-        this.que5firstNum = que5firstNum;
+    public void setQue5firstNum(int que5firstNum) {
+        this.que5firstNum.setText(Integer.toString(que5firstNum));
     }
 
     public JTextArea getQue6secondNum() {
         return que6secondNum;
     }
 
-    public void setQue6secondNum(JTextArea que6secondNum) {
-        this.que6secondNum = que6secondNum;
+    public void setQue6secondNum(int que6secondNum) {
+        this.que6secondNum.setText(Integer.toString(que6secondNum));
     }
 
     public JTextArea getQue6firstNum() {
         return que6firstNum;
     }
 
-    public void setQue6firstNum(JTextArea que6firstNum) {
-        this.que6firstNum = que6firstNum;
+    public void setQue6firstNum(int que6firstNum) {
+        this.que6firstNum.setText(Integer.toString(que6firstNum));
     }
 
-    public JComboBox getSign6() {
-        return Sign6;
-    }
-
-    public void setSign6(JComboBox sign6) {
-        Sign6 = sign6;
-    }
-
-    public JComboBox getSign5() {
-        return Sign5;
-    }
-
-    public void setSign5(JComboBox sign5) {
-        Sign5 = sign5;
-    }
-
-    public JComboBox getSign4() {
-        return Sign4;
-    }
-
-    public void setSign4(JComboBox sign4) {
-        Sign4 = sign4;
-    }
-
-    public JComboBox getSign3() {
-        return Sign3;
-    }
-
-    public void setSign3(JComboBox sign3) {
-        Sign3 = sign3;
-    }
-
-    public JComboBox getSign2() {
-        return Sign2;
-    }
-
-    public void setSign2(JComboBox sign2) {
-        Sign2 = sign2;
-    }
-
-    public JComboBox getSign1() {
-        return Sign1;
-    }
-
-    public void setSign1(JComboBox sign1) {
-        Sign1 = sign1;
-    }
-
-    public JComboBox getSign7() {
-        return Sign7;
-    }
-
-    public void setSign7(JComboBox sign7) {
-        Sign7 = sign7;
-    }
 
     public JTextArea getQue7secondNum() {
         return que7secondNum;
     }
 
-    public void setQue7secondNum(JTextArea que7secondNum) {
-        this.que7secondNum = que7secondNum;
+    public void setQue7secondNum(int que7secondNum) {
+        this.que7secondNum.setText(Integer.toString(que7secondNum));
     }
 
     public JTextArea getQue7firstNum() {
         return que7firstNum;
     }
 
-    public void setQue7firstNum(JTextArea que7firstNum) {
-        this.que7firstNum = que7firstNum;
+    public void setQue7firstNum(int que7firstNum) {
+        this.que7firstNum.setText(Integer.toString(que7firstNum));
     }
 
     public JTextField getAns1() {

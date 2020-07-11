@@ -11,4 +11,6 @@ public class MathProblemPage {
     private JTextField ansNum2;
     private JTextField ansNum3;
     private JButton finishButton;
+
+
 }
