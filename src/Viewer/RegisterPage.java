@@ -34,7 +34,7 @@ public class RegisterPage extends JFrame {
         IdText = idText;
     }
 
-    public JTextField getNameText() {
+    public JTextField getTheNameText() {
         return NameText;
     }
 
@@ -42,7 +42,7 @@ public class RegisterPage extends JFrame {
         NameText = nameText;
     }
 
-    public JTextField getLastNameText() {
+    public JTextField getTheLastNameText() {
         return LastNameText;
     }
 
@@ -50,7 +50,7 @@ public class RegisterPage extends JFrame {
         LastNameText = lastNameText;
     }
 
-    public JTextField getUsernameText() {
+    public JTextField getTheUsernameText() {
         return UsernameText;
     }
 
@@ -58,7 +58,7 @@ public class RegisterPage extends JFrame {
         UsernameText = usernameText;
     }
 
-    public JTextField getPasswordText() {
+    public JTextField getThePasswordText() {
         return PasswordText;
     }
 
@@ -106,11 +106,13 @@ public class RegisterPage extends JFrame {
         PasswordLabel = passwordLabel;
     }
 
-    public JButton getRegisterBtn() {
+    public JButton getTheRegisterBtn() {
         return RegisterBtn;
     }
 
     public void setRegisterBtn(JButton registerBtn) {
         RegisterBtn = registerBtn;
     }
+
+
 }
