@@ -5,11 +5,11 @@ import java.awt.event.ActionListener;
 
 public class TeacherSimpleTest extends JFrame
 {
-    String [] sign = { "+", "-", "%", "*" };
-   private JPanel TeacherTest;
+
+    private JPanel TeacherTest;
     private JTextField que1secondNum;
     private JTextField que1firstNum;
-    private JComboBox sign1 = new JComboBox (sign);
+
     private JTextField que2firstNum;
     private JTextField que3secondNum;
     private JTextField que3firstNum;
@@ -22,16 +22,15 @@ public class TeacherSimpleTest extends JFrame
     private JTextField que6firstNum;
     private JTextField que7secondNum;
     private JTextField que7firstNum;
-    private JComboBox sign2 = new JComboBox (sign);
-    private JComboBox sign6 = new JComboBox (sign);
-    private JComboBox sign5 = new JComboBox (sign);
-    private JComboBox sign4 = new JComboBox (sign);
-    private JComboBox sign3 = new JComboBox (sign);
-    private JComboBox sign7 = new JComboBox (sign);
+
     private JButton finishButton;
-
-
-
+    private JTextArea sign1;
+    private JTextArea sign2;
+    private JTextArea sign3;
+    private JTextArea sign4;
+    private JTextArea sign5;
+    private JTextArea sign6;
+    private JTextArea sign7;
 
 
     public TeacherSimpleTest()
@@ -68,13 +67,6 @@ public class TeacherSimpleTest extends JFrame
         this.que1firstNum = que1firstNum;
     }
 
-    public String getSign1() {
-        return sign1.getSelectedItem().toString();
-    }
-
-    public void setSign1(char sign1) {
-        this.sign1.setSelectedItem(sign1);
-    }
 
     public int getQue2firstNum() {
         return Integer.parseInt(que2firstNum.getText());
@@ -172,52 +164,60 @@ public class TeacherSimpleTest extends JFrame
         this.que7firstNum = que7firstNum;
     }
 
-    public String getSign7() {
-        return sign7.getSelectedItem().toString();
+    public String getSign1() {
+        return sign1.toString();
     }
 
-    public void setSign7(char sign7) {
-        this.sign7.setSelectedItem(sign7);
-    }
-
-    public String getSign6() {
-        return sign6.getSelectedItem().toString();
-    }
-
-    public void setSign6(char sign6) {
-        this.sign6.setSelectedItem(sign6);
-    }
-
-    public String getSign5() {
-        return sign5.getSelectedItem().toString();
-    }
-
-    public void setSign5(char sign5) {
-        this.sign5.setSelectedItem(sign5);
-    }
-
-    public String getSign4() {
-        return sign4.getSelectedItem().toString();
-    }
-
-    public void setSign4(char sign4) {
-        this.sign4.setSelectedItem(sign4);
-    }
-
-    public String getSign3() {
-        return sign3.getSelectedItem().toString();
-    }
-
-    public void setSign3(char sign3) {
-        this.sign3.setSelectedItem(sign3);
+    public void setSign1(String sign1) {
+        this.sign1.setText(sign1);
     }
 
     public String getSign2() {
-        return sign2.getSelectedItem().toString();
+        return sign2.toString();
     }
 
-    public void setSign2(char sign2) {
-        this.sign2.setSelectedItem(sign2);
+    public void setSign2(String sign2) {
+        this.sign2.setText(sign2);
+    }
+
+    public String getSign3() {
+        return sign3.toString();
+    }
+
+    public void setSign3(String sign3) {
+        this.sign3.setText(sign3);
+    }
+
+    public String getSign4() {
+        return sign4.toString();
+    }
+
+    public void setSign4(String sign4) {
+        this.sign4.setText(sign4);
+    }
+
+    public String getSign5() {
+        return sign5.toString();
+    }
+
+    public void setSign5(String sign5) {
+        this.sign5.setText(sign5);
+    }
+
+    public String getSign6() {
+        return sign6.toString();
+    }
+
+    public void setSign6(String sign6) {
+        this.sign6.setText(sign6);
+    }
+
+    public String getSign7() {
+        return sign7.toString();
+    }
+
+    public void setSign7(String sign7) {
+        this.sign7.setText(sign7);
     }
 
     public JButton getFinishButton() {

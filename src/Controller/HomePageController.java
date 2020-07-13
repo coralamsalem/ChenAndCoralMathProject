@@ -31,9 +31,9 @@ public class HomePageController
 
         LogBtn.addActionListener(new logListener());
         RegisterBtn.addActionListener(new registerListener());
-        comboBox.addActionListener(new comboBoxListener());
-        value = (String) comboBox.getSelectedItem();
-        //String[] selectedItem = (String[])combo.getSelectedItem();
+        //comboBox.addActionListener(new comboBoxListener());
+        //value = (String) comboBox.getSelectedItem();
+        //System.out.println(value);
 
     }
 
@@ -42,13 +42,15 @@ public class HomePageController
         public void actionPerformed(ActionEvent e) {
             JComboBox cb = (JComboBox)e.getSource();
             value = (String)cb.getSelectedItem();
-
+            System.out.println(value);
         }
     }
 
     private class logListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            value = (String) comboBox.getSelectedItem();
+            System.out.println(value);
             if (value.equals("Student"))
             {
                 Slogin = new StudentLoginPageController();
@@ -65,6 +67,8 @@ public class HomePageController
         @Override
         public void actionPerformed(ActionEvent e)
         {
+            value = (String) comboBox.getSelectedItem();
+            System.out.println(value);
             if (value.equals("Student"))
             {
                 Sregister = new StudentRegisterPageController();

@@ -19,6 +19,9 @@ public class TestPageController {
     private SimpleMathTest StudentView;
     private TeacherMathProblem TeacherPro;
     private MathProblemPage StudentPro;
+    private String value;
+    private String sign;
+    private JComboBox comboBox;
 
     private JButton AddBtn;
     private JButton SubBtn;
@@ -35,6 +38,7 @@ public class TestPageController {
         DivBtn = testpage.getDivBtn();
         LitBtn = testpage.getLitBtn();
         PreBtn = testpage.getPreBtn();
+        comboBox=  homePage.getTSComboBox();
         testpage.setVisible(true);
 
         AddBtn.addActionListener(new addListener());
@@ -50,16 +54,33 @@ public class TestPageController {
     private class addListener implements ActionListener
     {
         @Override
+
         public void actionPerformed(ActionEvent e)
         {
-            Simple= new SimpleMathPageController(TeacherModel,TeacherView);
-            TeacherView.setSign1('+');
-            TeacherView.setSign2('+');
-            TeacherView.setSign3('+');
-            TeacherView.setSign4('+');
-            TeacherView.setSign5('+');
-            TeacherView.setSign6('+');
-            TeacherView.setSign7('+');
+            value = (String) comboBox.getSelectedItem();
+            sign= "+";
+            if (value.equals("Teacher"))
+            {
+                Simple = new SimpleMathPageController(TeacherModel, TeacherView);
+                TeacherView.setSign1(sign);
+                TeacherView.setSign2(sign);
+                TeacherView.setSign3(sign);
+                TeacherView.setSign4(sign);
+                TeacherView.setSign5(sign);
+                TeacherView.setSign6(sign);
+                TeacherView.setSign7(sign);
+            }
+            if (value.equals("Student"))
+            {
+                Simple = new SimpleMathPageController(TeacherView, StudentView);
+                StudentView.setSign1(sign);
+                StudentView.setSign2(sign);
+                StudentView.setSign3(sign);
+                StudentView.setSign4(sign);
+                StudentView.setSign5(sign);
+                StudentView.setSign6(sign);
+                StudentView.setSign7(sign);
+            }
         }
 
     }
@@ -68,19 +89,28 @@ public class TestPageController {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            if (homePage.getTSComboBox().equals("Teacher")) {
+            value = (String) comboBox.getSelectedItem();
+            sign= "-";
+            if (value.equals("Teacher")) {
                 Simple = new SimpleMathPageController(TeacherModel, TeacherView);
-                TeacherView.setSign1('-');
-                TeacherView.setSign2('-');
-                TeacherView.setSign3('-');
-                TeacherView.setSign4('-');
-                TeacherView.setSign5('-');
-                TeacherView.setSign6('-');
-                TeacherView.setSign7('-');
+                TeacherView.setSign1(sign);
+                TeacherView.setSign2(sign);
+                TeacherView.setSign3(sign);
+                TeacherView.setSign4(sign);
+                TeacherView.setSign5(sign);
+                TeacherView.setSign6(sign);
+                TeacherView.setSign7(sign);
             }
-            if (homePage.getTSComboBox().equals("Student"))
+            if (value.equals("Student"))
             {
                 Simple = new SimpleMathPageController(TeacherView, StudentView);
+                StudentView.setSign1(sign);
+                StudentView.setSign2(sign);
+                StudentView.setSign3(sign);
+                StudentView.setSign4(sign);
+                StudentView.setSign5(sign);
+                StudentView.setSign6(sign);
+                StudentView.setSign7(sign);
             }
         }
 
@@ -88,20 +118,32 @@ public class TestPageController {
     private class mulListener implements ActionListener
     {
         @Override
-        public void actionPerformed(ActionEvent e) {
-            if (homePage.getTSComboBox().equals("Teacher")) {
+        public void actionPerformed(ActionEvent e)
+        {
+             sign= "*";
+            value = (String) comboBox.getSelectedItem();
+            if (value.equals("Teacher"))
+            {
+
                 Simple = new SimpleMathPageController(TeacherModel, TeacherView);
-                TeacherView.setSign1('*');
-                TeacherView.setSign2('*');
-                TeacherView.setSign3('*');
-                TeacherView.setSign4('*');
-                TeacherView.setSign5('*');
-                TeacherView.setSign6('*');
-                TeacherView.setSign7('*');
+                TeacherView.setSign1(sign);
+                TeacherView.setSign2(sign);
+                TeacherView.setSign3(sign);
+                TeacherView.setSign4(sign);
+                TeacherView.setSign5(sign);
+                TeacherView.setSign6(sign);
+                TeacherView.setSign7(sign);
             }
-            if (homePage.getTSComboBox().equals("Student"))
+            if (value.equals("Student"))
             {
                 Simple = new SimpleMathPageController(TeacherView, StudentView);
+                StudentView.setSign1(sign);
+                StudentView.setSign2(sign);
+                StudentView.setSign3(sign);
+                StudentView.setSign4(sign);
+                StudentView.setSign5(sign);
+                StudentView.setSign6(sign);
+                StudentView.setSign7(sign);
             }
         }
 
@@ -109,20 +151,31 @@ public class TestPageController {
     private class divListener implements ActionListener
     {
         @Override
-        public void actionPerformed(ActionEvent e) {
-            if (homePage.getTSComboBox().equals("Teacher")) {
+        public void actionPerformed(ActionEvent e)
+        {
+            value = (String) comboBox.getSelectedItem();
+            sign= "%";
+            if (value.equals("Teacher"))
+            {
                 Simple = new SimpleMathPageController(TeacherModel, TeacherView);
-                TeacherView.setSign1('%');
-                TeacherView.setSign2('%');
-                TeacherView.setSign3('%');
-                TeacherView.setSign4('%');
-                TeacherView.setSign5('%');
-                TeacherView.setSign6('%');
-                TeacherView.setSign7('%');
+                TeacherView.setSign1(sign);
+                TeacherView.setSign2(sign);
+                TeacherView.setSign3(sign);
+                TeacherView.setSign4(sign);
+                TeacherView.setSign5(sign);
+                TeacherView.setSign6(sign);
+                TeacherView.setSign7(sign);
             }
-            if (homePage.getTSComboBox().equals("Student"))
+            if (value.equals("Student"))
             {
                 Simple = new SimpleMathPageController(TeacherView, StudentView);
+                StudentView.setSign1(sign);
+                StudentView.setSign2(sign);
+                StudentView.setSign3(sign);
+                StudentView.setSign4(sign);
+                StudentView.setSign5(sign);
+                StudentView.setSign6(sign);
+                StudentView.setSign7(sign);
             }
         }
 

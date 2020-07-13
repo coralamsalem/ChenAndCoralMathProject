@@ -40,8 +40,8 @@ public class HomePage extends JFrame
         WelcomeLabel = welcomeLabel;
     }
 
-    public String getTSComboBox() {
-        return TSComboBox.getSelectedItem().toString();
+    public JComboBox getTSComboBox() {
+        return TSComboBox;
     }
 
     public void setTSComboBox(JComboBox comboBox) {

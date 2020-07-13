@@ -3,7 +3,7 @@
   <grid id="27dc6" layout-manager="GridLayoutManager" row-count="8" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="500" height="419"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -120,104 +120,71 @@
         </constraints>
         <properties/>
       </component>
-      <component id="6c30e" class="javax.swing.JComboBox" binding="sign7">
-        <constraints>
-          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <model>
-            <item value="+"/>
-            <item value="-"/>
-            <item value="%"/>
-            <item value="*"/>
-          </model>
-        </properties>
-      </component>
-      <component id="ab4ad" class="javax.swing.JComboBox" binding="sign6">
-        <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <model>
-            <item value="+"/>
-            <item value="-"/>
-            <item value="%"/>
-            <item value="*"/>
-          </model>
-        </properties>
-      </component>
-      <component id="90513" class="javax.swing.JComboBox" binding="sign5">
-        <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <model>
-            <item value="+"/>
-            <item value="-"/>
-            <item value="%"/>
-            <item value="*"/>
-          </model>
-        </properties>
-      </component>
-      <component id="901c4" class="javax.swing.JComboBox" binding="sign4">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <model>
-            <item value="+"/>
-            <item value="-"/>
-            <item value="%"/>
-            <item value="*"/>
-          </model>
-        </properties>
-      </component>
-      <component id="aad3b" class="javax.swing.JComboBox" binding="sign3">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <model>
-            <item value="+"/>
-            <item value="-"/>
-            <item value="%"/>
-            <item value="*"/>
-          </model>
-        </properties>
-      </component>
-      <component id="771c3" class="javax.swing.JComboBox" binding="sign2">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <model>
-            <item value="+"/>
-            <item value="-"/>
-            <item value="%"/>
-            <item value="*"/>
-          </model>
-        </properties>
-      </component>
       <component id="88d74" class="javax.swing.JButton" binding="finishButton" default-binding="true">
         <constraints>
-          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Finish"/>
         </properties>
       </component>
-      <component id="7b6e4" class="javax.swing.JComboBox" binding="sign1">
+      <component id="477f" class="javax.swing.JTextArea" binding="sign1">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="6d1c1" class="javax.swing.JTextArea" binding="sign2">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="7c8c5" class="javax.swing.JTextArea" binding="sign3">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="5d979" class="javax.swing.JTextArea" binding="sign4">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="50"/>
+          </grid>
         </constraints>
         <properties>
-          <model>
-            <item value="+"/>
-            <item value="-"/>
-            <item value="%"/>
-            <item value="*"/>
-          </model>
+          <text value=""/>
         </properties>
+      </component>
+      <component id="2c24c" class="javax.swing.JTextArea" binding="sign5">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="afbe9" class="javax.swing.JTextArea" binding="sign6">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="e9c64" class="javax.swing.JTextArea" binding="sign7">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
       </component>
     </children>
   </grid>
