@@ -19,6 +19,9 @@ public class HomePage extends JFrame
         getContentPane().add(HomePagePanel);
         setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //TSComboBox.addItem("Student");
+        //TSComboBox.addItem("Teacher");
     }
 
     public JPanel getHomePagePanel() {
@@ -41,11 +44,11 @@ public class HomePage extends JFrame
         return TSComboBox;
     }
 
-    public void setTSComboBox(JComboBox TSComboBox) {
-        this.TSComboBox = TSComboBox;
+    public void setTSComboBox(JComboBox comboBox) {
+        TSComboBox = comboBox;
     }
 
-    public JButton getRegisterBtn() {
+    public JButton getTheRegisterBtn() {
         return RegisterBtn;
     }
 
@@ -53,7 +56,7 @@ public class HomePage extends JFrame
         RegisterBtn = registerBtn;
     }
 
-    public JButton getLogBtn() {
+    public JButton getTheLogBtn() {
         return LogBtn;
     }
 
