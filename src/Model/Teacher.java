@@ -4,30 +4,45 @@ public class Teacher extends User
 {
     private int num1;
     private int num2;
-    private char sign;
+    private String sign;
     private String problem;
-    private double answer;
+    private String answer;
 
-    public void AnswerOfTwoNumbers(int firstNum, char sign1, int secondNum)
+    public boolean AnswerOfTwoNumbers(int firstNum, String sign1, int secondNum, String StudentAns)
     {
-        if (sign1== '+')
+        if (sign1.equals("+"))
         {
-            answer= firstNum+secondNum;
+            answer=Integer.toString(firstNum+secondNum);
         }
-        if (sign1== '-')
+        if (sign1.equals("-"))
         {
-            answer= firstNum-secondNum;
+            answer=Integer.toString(firstNum-secondNum);
         }
-        if (sign1== '%')
+        if (sign1.equals("%"))
        {
-            answer= firstNum%secondNum;
+            answer=Double.toString(firstNum%secondNum);
         }
-            if (sign1== '*')
+            if (sign1.equals("*"))
         {
-        answer= firstNum*secondNum;
+            answer= Integer.toString(firstNum*secondNum);
         }
+            if(IsTrue(answer,StudentAns))
+            {
+                return true;
+            }
+            return false;
     }
-    public double getAnswer()
+
+    public boolean IsTrue(String TeacherAns, String StudentAns)
+    {
+        if (TeacherAns.equals(StudentAns))
+        {
+            return true;
+        }
+
+        return false;
+    }
+    public String getAnswer()
     {
         return answer;
     }
@@ -47,7 +62,7 @@ public class Teacher extends User
     }
     public void setAnswer(double num)
     {
-        this.answer=num;
+        this.answer=Double.toString(num);
     }
     public String getProblem() {
         return problem;
@@ -56,10 +71,10 @@ public class Teacher extends User
     {
         this.problem=problem1;
     }
-    public char getSign() {
+    public String getSign() {
         return sign;
     }
-    public void setSign(char sign1)
+    public void setSign(String sign1)
     {
         this.sign=sign1;
     }

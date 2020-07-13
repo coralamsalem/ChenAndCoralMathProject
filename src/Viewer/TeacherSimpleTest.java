@@ -1,15 +1,15 @@
 package Viewer;
 
 import javax.swing.*;
-
 import java.awt.event.ActionListener;
 
 public class TeacherSimpleTest extends JFrame
 {
-    private JPanel TeacherView;
+    String [] sign = { "+", "-", "%", "*" };
+   private JPanel TeacherTest;
     private JTextField que1secondNum;
     private JTextField que1firstNum;
-    private JComboBox sign1;
+    private JComboBox sign1 = new JComboBox (sign);
     private JTextField que2firstNum;
     private JTextField que3secondNum;
     private JTextField que3firstNum;
@@ -22,25 +22,33 @@ public class TeacherSimpleTest extends JFrame
     private JTextField que6firstNum;
     private JTextField que7secondNum;
     private JTextField que7firstNum;
-    private JComboBox sign7;
-    private JComboBox sign6;
-    private JComboBox sign5;
-    private JComboBox sign4;
-    private JComboBox sign3;
-    private JComboBox sign2;
+    private JComboBox sign2 = new JComboBox (sign);
+    private JComboBox sign6 = new JComboBox (sign);
+    private JComboBox sign5 = new JComboBox (sign);
+    private JComboBox sign4 = new JComboBox (sign);
+    private JComboBox sign3 = new JComboBox (sign);
+    private JComboBox sign7 = new JComboBox (sign);
     private JButton finishButton;
+
+
+
+
 
     public TeacherSimpleTest()
     {
-        JPanel teacherTest = new JPanel();
+        super("Math test");
+        setBounds(300, 300, 800,500);
+        getContentPane().add(TeacherTest);
+        setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(600,400);
-        getContentPane().add(teacherTest);
-        teacherTest.add(TeacherView);
+
     }
-    public void addButtonFinishListener(ActionListener finish) {
+    public void addButtonFinishListener(ActionListener finish)
+    {
+
         finishButton.addActionListener(finish);
     }
+
 
 
 
@@ -60,12 +68,12 @@ public class TeacherSimpleTest extends JFrame
         this.que1firstNum = que1firstNum;
     }
 
-    public JComboBox getSign1() {
-        return sign1;
+    public String getSign1() {
+        return sign1.getSelectedItem().toString();
     }
 
-    public void setSign1(JComboBox sign1) {
-        this.sign1 = sign1;
+    public void setSign1(char sign1) {
+        this.sign1.setSelectedItem(sign1);
     }
 
     public int getQue2firstNum() {
@@ -85,7 +93,7 @@ public class TeacherSimpleTest extends JFrame
     }
 
     public int getQue3firstNum() {
-      return Integer.parseInt(que3firstNum.getText());
+        return Integer.parseInt(que3firstNum.getText());
     }
 
     public void setQue3firstNum(JTextField que3firstNum) {
@@ -164,53 +172,59 @@ public class TeacherSimpleTest extends JFrame
         this.que7firstNum = que7firstNum;
     }
 
-    public JComboBox getSign7() {
-        return sign7;
+    public String getSign7() {
+        return sign7.getSelectedItem().toString();
     }
 
-    public void setSign7(JComboBox sign7) {
-        this.sign7 = sign7;
+    public void setSign7(char sign7) {
+        this.sign7.setSelectedItem(sign7);
     }
 
-    public JComboBox getSign6() {
-        return sign6;
+    public String getSign6() {
+        return sign6.getSelectedItem().toString();
     }
 
-    public void setSign6(JComboBox sign6) {
-        this.sign6 = sign6;
+    public void setSign6(char sign6) {
+        this.sign6.setSelectedItem(sign6);
     }
 
-    public JComboBox getSign5() {
-        return sign5;
+    public String getSign5() {
+        return sign5.getSelectedItem().toString();
     }
 
-    public void setSign5(JComboBox sign5) {
-        this.sign5 = sign5;
+    public void setSign5(char sign5) {
+        this.sign5.setSelectedItem(sign5);
     }
 
-    public JComboBox getSign4() {
-        return sign4;
+    public String getSign4() {
+        return sign4.getSelectedItem().toString();
     }
 
-    public void setSign4(JComboBox sign4) {
-        this.sign4 = sign4;
+    public void setSign4(char sign4) {
+        this.sign4.setSelectedItem(sign4);
     }
 
-    public JComboBox getSign3() {
-        return sign3;
+    public String getSign3() {
+        return sign3.getSelectedItem().toString();
     }
 
-    public void setSign3(JComboBox sign3) {
-        this.sign3 = sign3;
+    public void setSign3(char sign3) {
+        this.sign3.setSelectedItem(sign3);
     }
 
-    public JComboBox getSign2() {
-        return sign2;
+    public String getSign2() {
+        return sign2.getSelectedItem().toString();
     }
 
-    public void setSign2(JComboBox sign2) {
-        this.sign2 = sign2;
+    public void setSign2(char sign2) {
+        this.sign2.setSelectedItem(sign2);
     }
 
+    public JButton getFinishButton() {
+        return finishButton;
+    }
 
+    public void setFinishButton(JButton finishButton) {
+        this.finishButton = finishButton;
+    }
 }

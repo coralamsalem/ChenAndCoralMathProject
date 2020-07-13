@@ -1,8 +1,6 @@
 package Viewer;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SimpleMathTest extends JFrame  {
@@ -38,6 +36,9 @@ public class SimpleMathTest extends JFrame  {
     private JTextArea sign1;
     private JPanel finishTest;
 
+
+
+
     public SimpleMathTest()
     {
         super("Math test");
@@ -46,6 +47,11 @@ public class SimpleMathTest extends JFrame  {
         setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+    }
+    public void addStudentButtonListener(ActionListener finish)
+    {
+
+        finishTestButton.addActionListener(finish);
     }
     public JPanel getFinishTest() {
         return finishTest;
@@ -176,61 +182,115 @@ public class SimpleMathTest extends JFrame  {
         this.que7firstNum.setText(Integer.toString(que7firstNum));
     }
 
-    public JTextField getAns1() {
-        return ans1;
+    public String getAns1() {
+        return ans1.toString();
     }
 
     public void setAns1(JTextField ans1) {
         this.ans1 = ans1;
     }
 
-    public JTextField getAns2() {
-        return ans2;
+    public String getAns2() {
+        return ans2.toString();
     }
 
     public void setAns2(JTextField ans2) {
         this.ans2 = ans2;
     }
 
-    public JTextField getAns3() {
-        return ans3;
+    public String getAns3() {
+        return ans3.toString();
     }
 
     public void setAns3(JTextField ans3) {
         this.ans3 = ans3;
     }
 
-    public JTextField getAns4() {
-        return ans4;
+    public String getAns4() {
+        return ans4.toString();
     }
 
     public void setAns4(JTextField ans4) {
         this.ans4 = ans4;
     }
 
-    public JTextField getAns5() {
-        return ans5;
+    public String getAns5() {
+        return ans5.toString();
     }
 
     public void setAns5(JTextField ans5) {
         this.ans5 = ans5;
     }
 
-    public JTextField getAns6() {
-        return ans6;
+    public String getAns6() {
+        return ans6.toString();
     }
 
     public void setAns6(JTextField ans6) {
         this.ans6 = ans6;
     }
 
-    public JTextField getAns7() {
-        return ans7;
+    public String getAns7() {
+        return ans7.toString();
     }
 
     public void setAns7(JTextField ans7) {
         this.ans7 = ans7;
     }
 
+    public JTextArea getSign7() {
+        return sign7;
+    }
 
+    public void setSign7(String sign7) {
+        this.sign7.append(sign7);
+    }
+
+    public JTextArea getSign6() {
+        return sign6;
+    }
+
+    public void setSign6(String sign6) {
+        this.sign6.append(sign6);
+    }
+
+    public JTextArea getSign5() {
+        return sign5;
+    }
+
+    public void setSign5(String sign5) {
+        this.sign5.append(sign5);
+    }
+
+    public JTextArea getSign4() {
+        return sign4;
+    }
+
+    public void setSign4(String sign4) {
+        this.sign4.append(sign4);
+    }
+
+    public JTextArea getSign3() {
+        return sign3;
+    }
+
+    public void setSign3(String sign3) {
+        this.sign3.append(sign3);
+    }
+
+    public JTextArea getSign2() {
+        return sign2;
+    }
+
+    public void setSign2(String sign2) {
+        this.sign2.append(sign2);
+    }
+
+    public JTextArea getSign1() {
+        return sign1;
+    }
+
+    public void setSign1(String sign1) {
+        this.sign1.append(sign1);
+    }
 }
