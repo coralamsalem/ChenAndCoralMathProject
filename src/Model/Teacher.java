@@ -8,40 +8,7 @@ public class Teacher extends User
     private String problem;
     private String answer;
 
-    public boolean AnswerOfTwoNumbers(int firstNum, String sign1, int secondNum, String StudentAns)
-    {
-        if (sign1.equals("+"))
-        {
-            answer=Integer.toString(firstNum+secondNum);
-        }
-        if (sign1.equals("-"))
-        {
-            answer=Integer.toString(firstNum-secondNum);
-        }
-        if (sign1.equals("%"))
-       {
-            answer=Double.toString(firstNum%secondNum);
-        }
-            if (sign1.equals("*"))
-        {
-            answer= Integer.toString(firstNum*secondNum);
-        }
-            if(IsTrue(answer,StudentAns))
-            {
-                return true;
-            }
-            return false;
-    }
 
-    public boolean IsTrue(String TeacherAns, String StudentAns)
-    {
-        if (TeacherAns.equals(StudentAns))
-        {
-            return true;
-        }
-
-        return false;
-    }
     public String getAnswer()
     {
         return answer;
@@ -79,9 +46,9 @@ public class Teacher extends User
         this.sign=sign1;
     }
 
-    public Teacher(String id, String name, String password, String profession) {
+   /* public Teacher(String id, String name, String password, String profession) {
         super(id, name, password, profession);
-    }
+    }*/
     public void setGrade(double newgrade)
     {
         Student.setGrade(newgrade);
