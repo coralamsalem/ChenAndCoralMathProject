@@ -14,23 +14,18 @@ public class TeacherSimpleTestController
     private TeacherSimpleTest TeacherView;
     String signTest;
 
-    public TeacherSimpleTestController(Test TestModel, TeacherSimpleTest TeacherView, String sign)
+    public TeacherSimpleTestController(Test TestModel, TeacherSimpleTest TeacherView)
     {
+
         this.TeacherView= TeacherView;
         this.TestModel= TestModel;
-        signTest=sign;
-        this.TeacherView = new TeacherSimpleTest();
-        this.TeacherView.setSign1(signTest);
-        this.TeacherView.setSign2(signTest);
-        this.TeacherView.setSign3(signTest);
-        this.TeacherView.setSign4(signTest);
-        this.TeacherView.setSign5(signTest);
-        this.TeacherView.setSign6(signTest);
-        this.TeacherView.setSign7(signTest);
-        this.TeacherView.setVisible(true);
+
+        this.TeacherView.showTeacerTestView();
         this.TeacherView.addButtonFinishListener(new TeacherSimpleTestController.button_Listener());
     }
-
+    //public void showTeacerTestViewer() {
+       // TeacherView.showTeacerTestView();
+   // }
     class button_Listener implements ActionListener
     {
         @Override

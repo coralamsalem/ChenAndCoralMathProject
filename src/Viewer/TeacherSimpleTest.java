@@ -1,12 +1,14 @@
 package Viewer;
 
+import Model.Test;
+
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
 public class TeacherSimpleTest extends JFrame
 {
 
-    private JPanel TeacherTest;
+   private JPanel TeacherTest;
     private JTextField que1secondNum;
     private JTextField que1firstNum;
 
@@ -31,15 +33,19 @@ public class TeacherSimpleTest extends JFrame
     private JTextArea sign5;
     private JTextArea sign6;
     private JTextArea sign7;
+    private String signTest;
 
-
-    public TeacherSimpleTest()
+    public TeacherSimpleTest(String sign)
     {
-        super("Math test");
-        setBounds(300, 300, 800,500);
-        getContentPane().add(TeacherTest);
-        setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel TeacherSimpleTest = new JPanel();
+        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        this.setSize(600,400);
+        getContentPane().add(TeacherSimpleTest);
+        TeacherSimpleTest.add(TeacherTest);
+        signTest=sign;
+
+       // setVisible(true);
+
 
     }
     public void addButtonFinishListener(ActionListener finish)
@@ -47,7 +53,10 @@ public class TeacherSimpleTest extends JFrame
 
         finishButton.addActionListener(finish);
     }
-
+    public void showTeacerTestView()
+    {
+        this.setVisible(true);
+    }
 
 
 
@@ -168,56 +177,56 @@ public class TeacherSimpleTest extends JFrame
         return sign1.toString();
     }
 
-    public void setSign1(String sign1) {
-        this.sign1.setText(sign1);
+    public void setSign1() {
+        this.sign1.setText(signTest);
     }
 
     public String getSign2() {
         return sign2.toString();
     }
 
-    public void setSign2(String sign2) {
-        this.sign2.setText(sign2);
+    public void setSign2() {
+        this.sign2.setText(signTest);
     }
 
     public String getSign3() {
         return sign3.toString();
     }
 
-    public void setSign3(String sign3) {
-        this.sign3.setText(sign3);
+    public void setSign3() {
+        this.sign3.setText(signTest);
     }
 
     public String getSign4() {
         return sign4.toString();
     }
 
-    public void setSign4(String sign4) {
-        this.sign4.setText(sign4);
+    public void setSign4() {
+        this.sign4.setText(signTest);
     }
 
     public String getSign5() {
         return sign5.toString();
     }
 
-    public void setSign5(String sign5) {
-        this.sign5.setText(sign5);
+    public void setSign5() {
+        this.sign5.setText(signTest);
     }
 
     public String getSign6() {
         return sign6.toString();
     }
 
-    public void setSign6(String sign6) {
-        this.sign6.setText(sign6);
+    public void setSign6() {
+        this.sign6.setText(signTest);
     }
 
     public String getSign7() {
         return sign7.toString();
     }
 
-    public void setSign7(String sign7) {
-        this.sign7.setText(sign7);
+    public void setSign7() {
+        this.sign7.setText(signTest);
     }
 
     public JButton getFinishButton() {
@@ -227,4 +236,6 @@ public class TeacherSimpleTest extends JFrame
     public void setFinishButton(JButton finishButton) {
         this.finishButton = finishButton;
     }
+
+
 }

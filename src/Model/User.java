@@ -1,6 +1,8 @@
 package Model;
 
-public class User
+import java.io.Serializable;
+
+public class User implements Serializable
 {
     private String ID;
     private String name;
@@ -32,24 +34,21 @@ public class User
     {
         return ID;
     }
-    public void setID(String newID)
-    {
-        this.ID= newID;
 
-    }
+    public void setID(String newID) { this.ID= newID; }
+
     public String getName()
     {
         return name;
     }
-    public void setName(String newName)
-    {
-        this.name= newName;
 
-    }
+    public void setName(String newName) { this.name= newName; }
+
     public String getLastName()
     {
         return lastName;
     }
+
     public void setLastName(String newLastName)
     {
         this.lastName = newLastName;
@@ -59,15 +58,14 @@ public class User
     {
         return profession;
     }
-    public void setProfession(String newProfession)
-    {
-        this.profession= newProfession;
 
-    }
+    public void setProfession(String newProfession) { this.profession= newProfession; }
+
     public String getUsername()
     {
         return username;
     }
+
     public void setUsername(String newUsername)
     {
         this.username = newUsername;
@@ -77,11 +75,7 @@ public class User
     {
         return password;
     }
-    public void setPassword(String newPassword)
-    {
-        this.password= newPassword;
 
-    }
-
+    public void setPassword(String newPassword) { this.password= newPassword; }
 
 }

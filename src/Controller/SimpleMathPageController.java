@@ -49,11 +49,13 @@ public class SimpleMathPageController
         StudentView.setSign5(sign);
         StudentView.setSign6(sign);
         StudentView.setSign7(sign);
-
+        this.StudentView.showStudentTestView();
 
         StudentView.addStudentButtonListener(new SimpleMathPageController.StudentButton_Listener());
     }
-
+ //   public void showStudentTestViewer() {
+  //      StudentView.showStudentTestView();
+ //   }
 
     class StudentButton_Listener implements ActionListener
     {

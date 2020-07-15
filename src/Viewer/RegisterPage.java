@@ -1,9 +1,12 @@
 package Viewer;
 
+import Controller.RegisterPageController;
+
 import javax.swing.*;
 
 public class RegisterPage extends JFrame {
     private JPanel RegisterPage;
+    private HomePage homePage;
     private JTextField IdText;
     private JTextField NameText;
     private JTextField LastNameText;
@@ -15,51 +18,49 @@ public class RegisterPage extends JFrame {
     private JLabel UsernameLabel;
     private JLabel PasswordLabel;
     private JButton RegisterBtn;
+    private String pro;
 
     public RegisterPage()
     {
         JPanel Register = new JPanel();
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setSize(600,400);
         getContentPane().add(Register);
         Register.add(RegisterPage);
     }
 
 
-    public JTextField getIdText() {
-        return IdText;
+    public String getIdText() { return IdText.getText(); }
+
+    public void showRegisterView()
+    {
+        this.setVisible(true);
     }
 
     public void setIdText(JTextField idText) {
         IdText = idText;
     }
 
-    public JTextField getTheNameText() {
-        return NameText;
+    public String getTheNameText() {
+        return NameText.getText();
     }
 
     public void setNameText(JTextField nameText) {
         NameText = nameText;
     }
 
-    public JTextField getTheLastNameText() {
-        return LastNameText;
-    }
+    public String getTheLastNameText() { return LastNameText.getText(); }
 
     public void setLastNameText(JTextField lastNameText) {
         LastNameText = lastNameText;
     }
 
-    public JTextField getTheUsernameText() {
-        return UsernameText;
-    }
+    public String getTheUsernameText() { return UsernameText.getText(); }
 
-    public void setUsernameText(JTextField usernameText) {
-        UsernameText = usernameText;
-    }
+    public void setUsernameText(JTextField usernameText) { UsernameText = usernameText; }
 
-    public JTextField getThePasswordText() {
-        return PasswordText;
+    public String getThePasswordText() {
+        return PasswordText.getText();
     }
 
     public void setPasswordText(JTextField passwordText) {

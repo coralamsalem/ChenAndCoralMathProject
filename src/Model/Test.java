@@ -1,5 +1,8 @@
 package Model;
-public class Test
+
+import java.io.Serializable;
+
+public class Test implements Serializable
 {
    private String Que1firstNum;
    private String Que1secondNum;
@@ -19,7 +22,10 @@ public class Test
    private int num1;
    private int num2;
    private String answer;
+    public Test()
+    {
 
+    }
    public Test(String Que1firstNum,String Que1secondNum,String Que2firstNum,String Que2secondNum,String Que3firstNum,String Que3secondNum,String Que4firstNum,String Que4secondNum,String Que5firstNum,String Que5secondNum,String Que6firstNum,String Que6secondNum,String Que7firstNum,String Que7secondNum, String sign) {
        this.Que1firstNum = Que1firstNum;
        this.Que1secondNum= Que1secondNum;

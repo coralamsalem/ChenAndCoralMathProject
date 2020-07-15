@@ -44,9 +44,13 @@ public class SimpleMathTest extends JFrame  {
         super("Math test");
         setBounds(300, 300, 800,500);
         getContentPane().add(SimpleTest);
-        setVisible(true);
+       // setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+    }
+    public void showStudentTestView()
+    {
+        this.setVisible(true);
     }
     public void addStudentButtonListener(ActionListener finish)
     {

@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Login;
 import Model.Teacher;
 import Model.Test;
 import Viewer.*;
@@ -13,16 +14,13 @@ public class TestPageController {
     private Test testModel;
 
     private SimpleMathPageController Simple;
-    private ProblemTestController problem;
-    private TeacherSimpleTestController teacherController;
+   private TeacherSimpleTestController teacherController;
 
     private TestPage testpage;
     private LoginPage loginPage;
     private HomePage homePage;
-    private TeacherSimpleTest TeacherView;
+   private TeacherSimpleTest TeacherView;
     private SimpleMathTest StudentView;
-    private TeacherMathProblem TeacherPro;
-    private MathProblemPage StudentPro;
 
     private String value;
     private String sign;
@@ -35,8 +33,7 @@ public class TestPageController {
     private JButton SubBtn;
     private JButton MulBtn;
     private JButton DivBtn;
-    private JButton LitBtn;
-    private JButton PreBtn;
+
 
     public TestPageController(String pro) {
 
@@ -45,109 +42,102 @@ public class TestPageController {
         SubBtn = testpage.getSubBtn();
         MulBtn = testpage.getMulBtn();
         DivBtn = testpage.getDivBtn();
-        LitBtn = testpage.getLitBtn();
-        PreBtn = testpage.getPreBtn();
+
         //comboBox = homePage.getTSComboBox();
-        testpage.setVisible(true);
-        this.pro=pro;
+
+        this.pro = pro;
 
         AddBtn.addActionListener(new addListener());
-        SubBtn.addActionListener(new subListener());
-        MulBtn.addActionListener(new mulListener());
-        DivBtn.addActionListener(new divListener());
-        LitBtn.addActionListener(new litListener());
-        PreBtn.addActionListener(new preListener());
+      //  SubBtn.addActionListener(new subListener());
+     //   MulBtn.addActionListener(new mulListener());
+      //  DivBtn.addActionListener(new divListener());
 
 
     }
 
-    private class addListener implements ActionListener
-    {
+    public void showTestPage() {
+        testpage.showTestPageView();
+    }
+
+    private class addListener implements ActionListener {
         @Override
 
-        public void actionPerformed(ActionEvent e)
-        {
+        public void actionPerformed(ActionEvent e) {
             sign = "+";
-            if(pro.equals("Teacher")) {
+            if (pro.equals("Teacher")) {
 
-                teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
+                TeacherView = new TeacherSimpleTest(sign);
+                testModel= new Test();
+                teacherController = new TeacherSimpleTestController(testModel, TeacherView);
+
             }
-            if(pro.equals("Student"))
+            if (pro.equals("Student"))
             {
-                Simple= new SimpleMathPageController(testModel,StudentView,sign);
+                SimpleMathTest StudentView = new SimpleMathTest();
+                Test testModel= new Test();
+                Simple = new SimpleMathPageController(testModel, StudentView, sign);
+
             }
         }
 
     }
-    private class subListener implements ActionListener
-    {
+
+  /*  private class subListener implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent e)
-        {
+        public void actionPerformed(ActionEvent e) {
             sign = "-";
-            if(pro.equals("Teacher")) {
+            if (pro.equals("Teacher")) {
 
+                TeacherView = new TeacherSimpleTest();
                 teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
+
             }
-            if(pro.equals("Student"))
-            {
-                Simple= new SimpleMathPageController(testModel,StudentView,sign);
+            if (pro.equals("Student")) {
+                StudentView = new SimpleMathTest();
+                Simple = new SimpleMathPageController(testModel, StudentView, sign);
+
             }
         }
 
     }
-    private class mulListener implements ActionListener
-    {
+
+    private class mulListener implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent e)
-        {
+        public void actionPerformed(ActionEvent e) {
             sign = "*";
-            if(pro.equals("Teacher")) {
+            if (pro.equals("Teacher")) {
 
+                TeacherView = new TeacherSimpleTest();
                 teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
+
             }
-            if(pro.equals("Student"))
-            {
-                Simple= new SimpleMathPageController(testModel,StudentView,sign);
+            if (pro.equals("Student")) {
+                StudentView = new SimpleMathTest();
+                Simple = new SimpleMathPageController(testModel, StudentView, sign);
+
             }
 
         }
 
     }
-    private class divListener implements ActionListener
-    {
+
+    private class divListener implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent e)
-        {
+        public void actionPerformed(ActionEvent e) {
             sign = "%";
-            if(pro.equals("Teacher")) {
+            if (pro.equals("Teacher")) {
 
+                TeacherView = new TeacherSimpleTest();
                 teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
+
             }
-            if(pro.equals("Student"))
-            {
-                Simple= new SimpleMathPageController(testModel,StudentView,sign);
+            if (pro.equals("Student")) {
+                StudentView = new SimpleMathTest();
+                Simple = new SimpleMathPageController(testModel, StudentView, sign);
+
             }
         }
 
 
-    }
-    private class litListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            problem= new ProblemTestController(TeacherModel, TeacherPro);
-        }
-
-    }
-    private class preListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            problem= new ProblemTestController(TeacherPro, StudentPro);
-        }
-
-    }
+    }*/
 }

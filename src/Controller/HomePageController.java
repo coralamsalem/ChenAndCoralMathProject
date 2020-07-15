@@ -1,7 +1,10 @@
 package Controller;
 
+import Model.Login;
+import Model.RegisterModel;
 import Viewer.HomePage;
 import Viewer.LoginPage;
+import Viewer.RegisterPage;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,55 +13,48 @@ import java.awt.event.ActionListener;
 public class HomePageController
 {
     private HomePage homePage;
-    private JButton RegisterBtn;
-    private JButton LogBtn;
-    private JComboBox comboBox;
-    private LoginPage loginPage;
-    private TeacherLoginPageController Tlogin;
-    private StudentLoginPageController Slogin;
-    private TeacherRegisterPageController Tregister;
-    private StudentRegisterPageController Sregister;
+
+    //private LoginPage loginPage;
+  //  private LoginPageController loginController;
+  //  private Login loginModel;
+  //  private RegisterPageController registerController;
+ //   private RegisterModel registerModel;
+  //  private RegisterPage registerView;
     private String value;
 
-    public HomePageController()
+    public HomePageController(HomePage homePage)
     {
-        homePage = new HomePage();
-        LogBtn = homePage.getTheLogBtn();
-        RegisterBtn = homePage.getTheRegisterBtn();
-        comboBox = homePage.getTSComboBox();
+        this.homePage = homePage;
 
         homePage.setVisible(true);
 
-        LogBtn.addActionListener(new logListener());
-        RegisterBtn.addActionListener(new registerListener());
+        this.homePage.addRegisterListener( new registerListener());
+        this.homePage.addLoginListener(new logListener());
         //comboBox.addActionListener(new comboBoxListener());
         //value = (String) comboBox.getSelectedItem();
         //System.out.println(value);
 
     }
 
-    private class comboBoxListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            JComboBox cb = (JComboBox)e.getSource();
-            value = (String)cb.getSelectedItem();
-            System.out.println(value);
-        }
-    }
+
 
     private class logListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            value = (String) comboBox.getSelectedItem();
-            System.out.println(value);
-            if (value.equals("Student"))
+            value = (String) homePage.getTSComboBox().getSelectedItem();
+            try
             {
-                Slogin = new StudentLoginPageController();
+                LoginPage loginPage = new LoginPage();
+                Login loginModel = new Login();
+                LoginPageController loginController = new LoginPageController(loginPage, loginModel, value);
+                homePage.exitPage();
             }
-            else if (value.equals("Teacher"))
+            catch (Exception exception)
             {
-                Tlogin = new TeacherLoginPageController();
+               // exception.printStackTrace();
             }
+
+
         }
 
     }
@@ -67,15 +63,17 @@ public class HomePageController
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            value = (String) comboBox.getSelectedItem();
-            System.out.println(value);
-            if (value.equals("Student"))
+            value = (String) homePage.getTSComboBox().getSelectedItem();
+            try
             {
-                Sregister = new StudentRegisterPageController();
+                RegisterPage registerView = new RegisterPage();
+                RegisterModel registerModel = new RegisterModel();
+                RegisterPageController registerController = new RegisterPageController( registerModel,registerView, value);
+               // homePage.exitPage();
             }
-            else if (value.equals("Teacher"))
+            catch (Exception exception)
             {
-                Tregister = new TeacherRegisterPageController();
+                // exception.printStackTrace();
             }
 
         }

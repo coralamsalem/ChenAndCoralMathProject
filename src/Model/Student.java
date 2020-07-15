@@ -10,15 +10,9 @@ public class Student extends User
         System.out.println(newgrade);
     }
 
-    public double getGrade() {
+    public double getGrade() { return grade; }
 
-        return grade;
-    }
-
-
-
-    public Student(String id, String name, String password, String profession, double grade) {
-        super(id, name, password, profession);
-
+    public Student(String id, String name, String lastName, String username, String password, String profession, double grade) {
+        super(id, name, lastName, username, password, profession);
     }
 }
