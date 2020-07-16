@@ -1,37 +1,52 @@
 package Controller;
 
-import Viewer.LoginPage;
+import Model.RegisterModel;
+import Model.User;
 import Viewer.RegisterPage;
 
-import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RegisterPageController {
 
-    private JTextField IdText;
-    private JTextField NameText;
-    private JTextField LastNameText;
-    private JTextField UsernameText;
-    private JTextField PasswordText;
-    private JLabel IdLabel;
-    private JLabel NameLabel;
-    private JLabel LastNameLabel;
-    private JLabel UsernameLabel;
-    private JLabel PasswordLabel;
-    private JButton RegisterBtn;
-    private RegisterPage viewer;
+    private RegisterModel registerModel;
+    private RegisterPage registerView;
+    private String value;
 
-    public RegisterPageController()
-    {
-        viewer = new RegisterPage();
+    public RegisterPageController(RegisterModel registerModel, RegisterPage registerView, String value) {
+        this.registerModel = registerModel;
+        this.registerView = registerView;
+        this.value = value;
+        registerView.showRegisterView();
+        registerView.getTheRegisterBtn().addActionListener(new registerBtnListener());
+    }
 
-        NameText = viewer.getNameText();
-        LastNameText = viewer.getLastNameText();
-        UsernameText = viewer.getUsernameText();
-        PasswordText = viewer.getPasswordText();
-        RegisterBtn = viewer.getRegisterBtn();
+    public void showRegisterView() {
+        registerView.showRegisterView();
+    }
 
-        viewer.setVisible(true);
+    class registerBtnListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            User newUser = new User(registerView.getIdText(), registerView.getName(), registerView.getTheLastNameText(), registerView.getTheUsernameText(), registerView.getThePasswordText(), value);
 
-        //loginButton.addActionListener(new loginListener);
+            try {
+                registerModel.AddUser(newUser);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+            registerView.setVisible(false);
+            //NewUserRegistration(newUser);
+        }
+       /* public void NewUserRegistration(User newUser) {
+            User user = new User(newUser);
+            try {
+                registerModel.AddUser(user);
+                registerView.setVisible(false);
+                //  System.out.println("Created2");
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        }*/
+
     }
 }

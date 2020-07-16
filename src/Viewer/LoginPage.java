@@ -10,28 +10,41 @@ public class LoginPage extends JFrame{
     private JTextField Username;
     private JPasswordField passwordField1;
     private JButton loginButton;
-    private JButton registerButton;
+
+    private String pro;
+    private HomePage homePage;
 
     public LoginPage()
     {
         JPanel Login = new JPanel();
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setSize(600,400);
+
         getContentPane().add(Login);
         Login.add(loginView);
 
     }
 
-    public JTextField getUsername() {
-        return Username;
+    public String getPro() {
+        return pro;
+    }
+
+    public void setPro(String pro) {
+        this.pro = pro;
+    }
+
+    public void showLoginPage() { this.setVisible(true); }
+
+    public String getUsername() {
+        return Username.getText();
     }
 
     public void setUsername(JTextField username) {
         Username = username;
     }
 
-    public JPasswordField getPasswordField1() {
-        return passwordField1;
+    public String getPasswordField1() {
+        return passwordField1.getText();
     }
 
     public void setPasswordField1(JPasswordField passwordField1) {
@@ -46,11 +59,6 @@ public class LoginPage extends JFrame{
         this.loginButton = loginButton;
     }
 
-    public JButton getRegisterButton() {
-        return registerButton;
-    }
 
-    public void setRegisterButton(JButton registerButton) {
-        this.registerButton = registerButton;
-    }
+    public String getComboBox() { return homePage.getTSComboBox().getSelectedItem().toString(); }
 }

@@ -1,7 +1,10 @@
 package Controller;
 
+import Model.Login;
+import Model.RegisterModel;
 import Viewer.HomePage;
 import Viewer.LoginPage;
+import Viewer.RegisterPage;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,45 +13,70 @@ import java.awt.event.ActionListener;
 public class HomePageController
 {
     private HomePage homePage;
-    private JButton RegisterBtn;
-    private JButton LogBtn;
-    private LoginPage loginPage;
-    private LoginPageController login;
-    private RegisterPageController register;
 
-    public HomePageController()
+    //private LoginPage loginPage;
+  //  private LoginPageController loginController;
+  //  private Login loginModel;
+  //  private RegisterPageController registerController;
+ //   private RegisterModel registerModel;
+  //  private RegisterPage registerView;
+    private String value;
+
+    public HomePageController(HomePage homePage)
     {
-        homePage = new HomePage();
-        LogBtn = homePage.getLogBtn();
-        RegisterBtn = homePage.getRegisterBtn();
+        this.homePage = homePage;
 
         homePage.setVisible(true);
 
-        LogBtn.addActionListener(new logListener());
-        RegisterBtn.addActionListener(new registerListener());
-
+        this.homePage.addRegisterListener( new registerListener());
+        this.homePage.addLoginListener(new logListener());
+        //comboBox.addActionListener(new comboBoxListener());
+        //value = (String) comboBox.getSelectedItem();
+        //System.out.println(value);
 
     }
 
+
+
     private class logListener implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            login = new LoginPageController();
+        public void actionPerformed(ActionEvent e) {
+            value = (String) homePage.getTSComboBox().getSelectedItem();
+            try
+            {
+                LoginPage loginPage = new LoginPage();
+                Login loginModel = new Login();
+                LoginPageController loginController = new LoginPageController(loginPage, loginModel, value);
+                homePage.exitPage();
+            }
+            catch (Exception exception)
+            {
+               // exception.printStackTrace();
+            }
+
+
         }
+
     }
 
     private class registerListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            register = new RegisterPageController();
+            value = (String) homePage.getTSComboBox().getSelectedItem();
+            try
+            {
+                RegisterPage registerView = new RegisterPage();
+                RegisterModel registerModel = new RegisterModel();
+                RegisterPageController registerController = new RegisterPageController( registerModel,registerView, value);
+               // homePage.exitPage();
+            }
+            catch (Exception exception)
+            {
+                // exception.printStackTrace();
+            }
+
         }
     }
-
-
-
-
-
 
 }

@@ -1,7 +1,6 @@
 package Viewer;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class HomePage extends JFrame
@@ -19,6 +18,17 @@ public class HomePage extends JFrame
         getContentPane().add(HomePagePanel);
         setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+    public void addRegisterListener(ActionListener finish)
+    {
+
+        RegisterBtn.addActionListener(finish);
+    }
+    public void addLoginListener(ActionListener finish)
+    {
+
+        LogBtn.addActionListener(finish);
     }
 
     public JPanel getHomePagePanel() {
@@ -41,11 +51,11 @@ public class HomePage extends JFrame
         return TSComboBox;
     }
 
-    public void setTSComboBox(JComboBox TSComboBox) {
-        this.TSComboBox = TSComboBox;
+    public void setTSComboBox(JComboBox comboBox) {
+        TSComboBox = comboBox;
     }
 
-    public JButton getRegisterBtn() {
+    public JButton getTheRegisterBtn() {
         return RegisterBtn;
     }
 
@@ -53,11 +63,15 @@ public class HomePage extends JFrame
         RegisterBtn = registerBtn;
     }
 
-    public JButton getLogBtn() {
+    public JButton getTheLogBtn() {
         return LogBtn;
     }
 
     public void setLogBtn(JButton logBtn) {
         LogBtn = logBtn;
+    }
+
+    public void exitPage(){
+        this.dispose();
     }
 }
