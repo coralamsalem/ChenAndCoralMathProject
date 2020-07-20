@@ -14,16 +14,13 @@ public class TestPage extends JFrame {
 
     public TestPage()
     {
-        //JPanel Test = new JPanel();
         getContentPane().add(TestPage);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(400,400);
+        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        this.setBounds(500,150,400,400);
         setVisible(true);
-
     }
 
     public void showTestPageView() {this.setVisible(true);}
-
 
     public JButton getAddBtn() {
         return AddBtn;
@@ -57,7 +54,6 @@ public class TestPage extends JFrame {
         DivBtn = divBtn;
     }
 
-
     public JPanel getTestPage() {
         return TestPage;
     }
@@ -65,4 +61,7 @@ public class TestPage extends JFrame {
     public void setTestPage(JPanel testPage) {
         TestPage = testPage;
     }
+
+    public void exitPage() { this.dispose(); }
+
 }

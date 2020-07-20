@@ -9,7 +9,6 @@ public interface IUserRepository {
 
     void delete(String id) throws IOException;
 
-
     Set<User> findAll();
 
     User findByName(String name);
@@ -17,5 +16,6 @@ public interface IUserRepository {
     public boolean checkLogin(String username, String password,String pro);
 
     String getPro(String username);
-
+    Boolean FindUser(String username);
+    String[] getUserList();
 }

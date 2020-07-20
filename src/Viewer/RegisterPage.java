@@ -24,7 +24,7 @@ public class RegisterPage extends JFrame {
     {
         JPanel Register = new JPanel();
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        this.setSize(600,400);
+        this.setBounds(380,200,600,400);
         getContentPane().add(Register);
         Register.add(RegisterPage);
     }
@@ -115,5 +115,6 @@ public class RegisterPage extends JFrame {
         RegisterBtn = registerBtn;
     }
 
+    public void exitPage() { this.dispose(); }
 
 }

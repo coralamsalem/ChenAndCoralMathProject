@@ -5,38 +5,26 @@ import Model.RegisterModel;
 import Viewer.HomePage;
 import Viewer.LoginPage;
 import Viewer.RegisterPage;
-
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class HomePageController
 {
     private HomePage homePage;
-
-    //private LoginPage loginPage;
-  //  private LoginPageController loginController;
-  //  private Login loginModel;
-  //  private RegisterPageController registerController;
- //   private RegisterModel registerModel;
-  //  private RegisterPage registerView;
     private String value;
 
     public HomePageController(HomePage homePage)
     {
+
         this.homePage = homePage;
-
         homePage.setVisible(true);
-
         this.homePage.addRegisterListener( new registerListener());
         this.homePage.addLoginListener(new logListener());
-        //comboBox.addActionListener(new comboBoxListener());
-        //value = (String) comboBox.getSelectedItem();
-        //System.out.println(value);
+
 
     }
-
-
 
     private class logListener implements ActionListener {
         @Override
@@ -47,16 +35,12 @@ public class HomePageController
                 LoginPage loginPage = new LoginPage();
                 Login loginModel = new Login();
                 LoginPageController loginController = new LoginPageController(loginPage, loginModel, value);
-                homePage.exitPage();
             }
             catch (Exception exception)
             {
                // exception.printStackTrace();
             }
-
-
         }
-
     }
 
     private class registerListener implements ActionListener {
@@ -69,14 +53,12 @@ public class HomePageController
                 RegisterPage registerView = new RegisterPage();
                 RegisterModel registerModel = new RegisterModel();
                 RegisterPageController registerController = new RegisterPageController( registerModel,registerView, value);
-               // homePage.exitPage();
+                //homePage.exitPage();
             }
             catch (Exception exception)
             {
                 // exception.printStackTrace();
             }
-
         }
     }
-
 }

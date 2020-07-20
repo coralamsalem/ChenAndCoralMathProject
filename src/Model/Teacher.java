@@ -8,7 +8,6 @@ public class Teacher extends User
     private String problem;
     private String answer;
 
-
     public String getAnswer()
     {
         return answer;
@@ -41,14 +40,7 @@ public class Teacher extends User
     public String getSign() {
         return sign;
     }
-    public void setSign(String sign1)
-    {
-        this.sign=sign1;
-    }
-
-   /* public Teacher(String id, String name, String password, String profession) {
-        super(id, name, password, profession);
-    }*/
+    public void setSign(String sign1) { this.sign=sign1; }
     public void setGrade(double newgrade)
     {
         Student.setGrade(newgrade);

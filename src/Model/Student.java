@@ -1,5 +1,6 @@
 package Model;
 import Model.Teacher;
+
 public class Student extends User
 {
     private double grade;

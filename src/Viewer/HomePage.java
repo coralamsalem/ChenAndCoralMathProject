@@ -1,7 +1,11 @@
 package Viewer;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 public class HomePage extends JFrame
 {
@@ -10,26 +14,21 @@ public class HomePage extends JFrame
     private JComboBox TSComboBox;
     private JButton RegisterBtn;
     private JButton LogBtn;
+    private Image backgroundImage;
 
     public HomePage()
     {
         super("Math Test");
-        setBounds(300,300,800,500);
+        setBounds(300,100,800,500);
         getContentPane().add(HomePagePanel);
         setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
-    public void addRegisterListener(ActionListener finish)
-    {
 
-        RegisterBtn.addActionListener(finish);
-    }
-    public void addLoginListener(ActionListener finish)
-    {
+    public void addRegisterListener(ActionListener finish) { RegisterBtn.addActionListener(finish); }
 
-        LogBtn.addActionListener(finish);
-    }
+    public void addLoginListener(ActionListener finish) { LogBtn.addActionListener(finish); }
 
     public JPanel getHomePagePanel() {
         return HomePagePanel;
@@ -71,7 +70,6 @@ public class HomePage extends JFrame
         LogBtn = logBtn;
     }
 
-    public void exitPage(){
-        this.dispose();
-    }
+    public void exitPage() { this.dispose(); }
+
 }

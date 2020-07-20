@@ -17,13 +17,12 @@ public class UserRepository implements IUserRepository
     {
      if (SoleInstance == null)
      {
-         //if there is no instance available, create new one:
 
              SoleInstance = new UserRepository();
-
      }
      return SoleInstance;
     }
+
     public UserRepository() throws IOException,ClassNotFoundException
     {
         this.fileManager = new FileManager<User>(FILENAME);
@@ -32,7 +31,8 @@ public class UserRepository implements IUserRepository
 
 
     @Override
-    public void add(User user) throws Exception {
+    public void add(User user) throws Exception
+    {
        if (user == null) {
             throw new Exception("must have a value");
         }
@@ -54,7 +54,6 @@ public class UserRepository implements IUserRepository
         }
 
     }
-
 
     @Override
     public Set<User> findAll() {
@@ -91,7 +90,28 @@ public class UserRepository implements IUserRepository
         return null;
     }
 
+    @Override
+    public Boolean FindUser(String username)
+    {
+        for (User user : users)
+        {
+            String userNameInDB = user.getUsername();
+            if( username.equals(userNameInDB))
+                return true;
+        }
+        return false;
+    }
 
 
-
+    @Override
+    public String[] getUserList()
+    {
+        int i=0;
+        String[] UserArr=new String[users.size()];
+        for (User user : users)
+        {
+            UserArr[i++]="ID:" +user.getID()+ ", Username:"+ user.getUsername()+", Pro: " +user.getProfession();
+        }
+        return UserArr;
+    }
 }

@@ -3,10 +3,10 @@ package Model.TestRepository;
 
 import Model.FileManager;
 import Model.Test;
+import Model.UserRepository;
 
 import java.io.IOException;
 import java.util.Set;
-
 
 
 public class TestRepository implements ITestRepository
@@ -15,15 +15,26 @@ public class TestRepository implements ITestRepository
     private final String FILENAME = "Tests";
     private Set<Test> test;
     private FileManager<Test> fileManager;
+    private static TestRepository SoleInstance;
+
+    public static TestRepository getInstance() throws Exception
+    {
+        if (SoleInstance == null)
+        {
+            //if there is no instance available, create new one:
+            SoleInstance = new TestRepository();
+
+        }
+        return SoleInstance;
+    }
 
     public TestRepository() throws IOException, ClassNotFoundException
     {
         this.fileManager = new FileManager<Test>(FILENAME);
-
         this.test = this.fileManager.read();
     }
 
-         public void add(Test test) throws Exception {
+         public void add1(Test test) throws Exception {
         if (test == null) {
             throw new Exception("You must have all the values");
         }
@@ -36,35 +47,17 @@ public class TestRepository implements ITestRepository
         this.fileManager.write(this.test);
     }
 
-
-
     public void delete(String sign) throws IOException
     {
-        if(newTest.getSign().equals(sign)) {
-
-
-            this.test.remove(new Test(newTest));
+        if(this.findByName(sign)!=null) {
+            this.test.remove(this.findByName(sign));
             this.fileManager.write(this.test);
         }
     }
 
-    /*  public Test find(int id) {
-        if (this.test.contains(new Test(id))) {
-            for (User user : users) {
-                if (user.getId() == id) {
-                    return user;
-                }
-            }
-        }
-
-        return null;
-    }*/
-
-
     public Set<Test> findAll() {
         return this.test;
     }
-
 
     public Test findByName(String sign1) {
         for (Test newTest : test)
@@ -74,7 +67,6 @@ public class TestRepository implements ITestRepository
                 return newTest;
             }
         }
-
         return null;
     }
 

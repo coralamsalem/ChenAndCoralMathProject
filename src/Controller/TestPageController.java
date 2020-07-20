@@ -1,6 +1,5 @@
 package Controller;
 
-import Model.Login;
 import Model.Teacher;
 import Model.Test;
 import Viewer.*;
@@ -11,15 +10,10 @@ import java.awt.event.ActionListener;
 
 public class TestPageController {
     private Teacher TeacherModel;
-    private Test testModel;
-
     private SimpleMathPageController Simple;
-   private TeacherSimpleTestController teacherController;
-
     private TestPage testpage;
     private LoginPage loginPage;
     private HomePage homePage;
-   private TeacherSimpleTest TeacherView;
     private SimpleMathTest StudentView;
 
     private String value;
@@ -43,14 +37,12 @@ public class TestPageController {
         MulBtn = testpage.getMulBtn();
         DivBtn = testpage.getDivBtn();
 
-        //comboBox = homePage.getTSComboBox();
-
         this.pro = pro;
 
         AddBtn.addActionListener(new addListener());
-      //  SubBtn.addActionListener(new subListener());
-     //   MulBtn.addActionListener(new mulListener());
-      //  DivBtn.addActionListener(new divListener());
+        SubBtn.addActionListener(new subListener());
+        MulBtn.addActionListener(new mulListener());
+        DivBtn.addActionListener(new divListener());
 
 
     }
@@ -66,37 +58,51 @@ public class TestPageController {
             sign = "+";
             if (pro.equals("Teacher")) {
 
-                TeacherView = new TeacherSimpleTest(sign);
-                testModel= new Test();
-                teacherController = new TeacherSimpleTestController(testModel, TeacherView);
-
+                TeacherSimpleTest TeacherView = new TeacherSimpleTest();
+                Test testModel = new Test();
+                TeacherSimpleTestController teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
+                testpage.exitPage();
             }
-            if (pro.equals("Student"))
-            {
+
+            if (pro.equals("Student")) {
                 SimpleMathTest StudentView = new SimpleMathTest();
-                Test testModel= new Test();
-                Simple = new SimpleMathPageController(testModel, StudentView, sign);
+                Test testModel = new Test();
+                try {
+                    SimpleMathPageController Simple = new SimpleMathPageController(testModel, StudentView, sign);
+                    testpage.exitPage();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
 
             }
         }
 
     }
 
-  /*  private class subListener implements ActionListener {
+    private class subListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             sign = "-";
             if (pro.equals("Teacher")) {
 
-                TeacherView = new TeacherSimpleTest();
-                teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
-
+                TeacherSimpleTest TeacherView = new TeacherSimpleTest();
+                Test testModel = new Test();
+                TeacherSimpleTestController teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
+                testpage.exitPage();
             }
+
             if (pro.equals("Student")) {
-                StudentView = new SimpleMathTest();
-                Simple = new SimpleMathPageController(testModel, StudentView, sign);
+                SimpleMathTest StudentView = new SimpleMathTest();
+                Test testModel = new Test();
+                try {
+                    SimpleMathPageController Simple = new SimpleMathPageController(testModel, StudentView, sign);
+                    testpage.exitPage();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
 
             }
+
         }
 
     }
@@ -107,18 +113,23 @@ public class TestPageController {
             sign = "*";
             if (pro.equals("Teacher")) {
 
-                TeacherView = new TeacherSimpleTest();
-                teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
-
+                TeacherSimpleTest TeacherView = new TeacherSimpleTest();
+                Test testModel = new Test();
+                TeacherSimpleTestController teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
+                testpage.exitPage();
             }
+
             if (pro.equals("Student")) {
-                StudentView = new SimpleMathTest();
-                Simple = new SimpleMathPageController(testModel, StudentView, sign);
-
+                SimpleMathTest StudentView = new SimpleMathTest();
+                Test testModel = new Test();
+                try {
+                    SimpleMathPageController Simple = new SimpleMathPageController(testModel, StudentView, sign);
+                    testpage.exitPage();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
-
         }
-
     }
 
     private class divListener implements ActionListener {
@@ -127,17 +138,24 @@ public class TestPageController {
             sign = "%";
             if (pro.equals("Teacher")) {
 
-                TeacherView = new TeacherSimpleTest();
-                teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
-
+                TeacherSimpleTest TeacherView = new TeacherSimpleTest();
+                Test testModel = new Test();
+                TeacherSimpleTestController teacherController = new TeacherSimpleTestController(testModel, TeacherView, sign);
+                testpage.exitPage();
             }
+
             if (pro.equals("Student")) {
-                StudentView = new SimpleMathTest();
-                Simple = new SimpleMathPageController(testModel, StudentView, sign);
+                SimpleMathTest StudentView = new SimpleMathTest();
+                Test testModel = new Test();
+                try {
+                    SimpleMathPageController Simple = new SimpleMathPageController(testModel, StudentView, sign);
+                    testpage.exitPage();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
 
             }
         }
+    }
 
-
-    }*/
 }

@@ -26,27 +26,25 @@ public class RegisterPageController {
     }
 
     class registerBtnListener implements ActionListener {
+        @Override
         public void actionPerformed(ActionEvent e) {
             User newUser = new User(registerView.getIdText(), registerView.getName(), registerView.getTheLastNameText(), registerView.getTheUsernameText(), registerView.getThePasswordText(), value);
+           NewUserRegistration(newUser);
 
-            try {
-                registerModel.AddUser(newUser);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-            registerView.setVisible(false);
-            //NewUserRegistration(newUser);
+            registerView.exitPage();
         }
-       /* public void NewUserRegistration(User newUser) {
-            User user = new User(newUser);
-            try {
-                registerModel.AddUser(user);
-                registerView.setVisible(false);
-                //  System.out.println("Created2");
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        }*/
+    }
+    public void NewUserRegistration(User newUser)
+    {
+        User account = new User(newUser);
+        try
+        {
+            registerModel.AddUser(newUser);
 
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 }
+
+

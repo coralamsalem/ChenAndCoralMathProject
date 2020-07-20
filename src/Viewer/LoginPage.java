@@ -10,6 +10,7 @@ public class LoginPage extends JFrame{
     private JTextField Username;
     private JPasswordField passwordField1;
     private JButton loginButton;
+    private JLabel loginText;
 
     private String pro;
     private HomePage homePage;
@@ -18,11 +19,9 @@ public class LoginPage extends JFrame{
     {
         JPanel Login = new JPanel();
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        this.setSize(600,400);
-
+        this.setBounds(380,200,600,400);
         getContentPane().add(Login);
         Login.add(loginView);
-
     }
 
     public String getPro() {
@@ -59,6 +58,15 @@ public class LoginPage extends JFrame{
         this.loginButton = loginButton;
     }
 
-
     public String getComboBox() { return homePage.getTSComboBox().getSelectedItem().toString(); }
+
+    public void exitPage() { this.dispose(); }
+
+    public void SetLogInText(boolean logged)
+    {
+        if(!logged)
+            loginText.setText("Wrong username or password");
+        else
+            loginText.setText("");
+    }
 }

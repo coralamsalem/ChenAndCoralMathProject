@@ -31,7 +31,7 @@ public class FileManager<T> {
 
     @SuppressWarnings("unchecked")
     public Set<T> read() throws FileNotFoundException, IOException, ClassNotFoundException {
-        if (!isFileExists()) { // Return empty set when file is not exists
+        if (!isFileExists()) {
             return new HashSet<T>();
         }
 

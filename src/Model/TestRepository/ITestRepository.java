@@ -6,7 +6,8 @@ import java.util.Set;
 
 public interface ITestRepository
 {
-    void add(Test test) throws Exception;
+
+    void add1(Test test) throws Exception;
 
     void delete(String sign) throws IOException;
 

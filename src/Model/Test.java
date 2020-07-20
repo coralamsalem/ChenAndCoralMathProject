@@ -1,9 +1,12 @@
 package Model;
 
+
+
 import java.io.Serializable;
 
 public class Test implements Serializable
 {
+
    private String Que1firstNum;
    private String Que1secondNum;
    private String Que2firstNum;
@@ -22,11 +25,19 @@ public class Test implements Serializable
    private int num1;
    private int num2;
    private String answer;
-    public Test()
-    {
 
+    public Test()
+   {
+       super();
+   }
+    public Test(String sign)
+    {
+    super();
+    this.sign=sign;
     }
-   public Test(String Que1firstNum,String Que1secondNum,String Que2firstNum,String Que2secondNum,String Que3firstNum,String Que3secondNum,String Que4firstNum,String Que4secondNum,String Que5firstNum,String Que5secondNum,String Que6firstNum,String Que6secondNum,String Que7firstNum,String Que7secondNum, String sign) {
+   public Test(String Que1firstNum,String Que1secondNum,String Que2firstNum,String Que2secondNum,String Que3firstNum,String Que3secondNum,String Que4firstNum,String Que4secondNum,String Que5firstNum,String Que5secondNum,String Que6firstNum,String Que6secondNum,String Que7firstNum,String Que7secondNum, String sign)
+   {
+       super();
        this.Que1firstNum = Que1firstNum;
        this.Que1secondNum= Que1secondNum;
        this.Que2firstNum = Que2firstNum;
@@ -63,31 +74,36 @@ public class Test implements Serializable
        this.Que7secondNum= newTest.getQue7secondNum();
        this.sign=newTest.getSign();
    }
-    public boolean AnswerOfTwoNumbers(String firstNum, String sign1, String secondNum, String StudentAns)
+   public boolean AnswerOfTwoNumbers(String firstNum, String sign1, String secondNum, String StudentAns)
     {
         num1=Integer.parseInt(firstNum);
         num2=Integer.parseInt(secondNum);
         if (sign1.equals("+"))
         {
-            answer=Integer.toString(num1+num2);
+            answer=String.valueOf(num1+num2);
         }
         if (sign1.equals("-"))
         {
-            answer=Integer.toString(num1-num2);
-        }
-        if (sign1.equals("%"))
-        {
-            answer=Double.toString(num1*num2);
+            answer=String.valueOf(num1-num2);
         }
         if (sign1.equals("*"))
         {
-            answer= Integer.toString(num1/num2);
+            answer=String.valueOf(num1*num2);
         }
+        if (sign1.equals("%"))
+        {
+            answer= String.valueOf(num1/num2);
+        }
+
+
         if(IsTrue(answer,StudentAns))
         {
             return true;
         }
-        return false;
+        else
+        {
+            return false;
+        }
     }
 
     public boolean IsTrue(String TeacherAns, String StudentAns)
@@ -96,9 +112,13 @@ public class Test implements Serializable
         {
             return true;
         }
+        else
+        {
+            return false;
+        }
 
-        return false;
     }
+
     public String getQue1firstNum() {
         return Que1firstNum;
     }

@@ -1,17 +1,12 @@
 package Viewer;
 
-import Model.Test;
-
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
 public class TeacherSimpleTest extends JFrame
 {
-
-   private JPanel TeacherTest;
     private JTextField que1secondNum;
     private JTextField que1firstNum;
-
     private JTextField que2firstNum;
     private JTextField que3secondNum;
     private JTextField que3firstNum;
@@ -24,7 +19,6 @@ public class TeacherSimpleTest extends JFrame
     private JTextField que6firstNum;
     private JTextField que7secondNum;
     private JTextField que7firstNum;
-
     private JButton finishButton;
     private JTextArea sign1;
     private JTextArea sign2;
@@ -33,32 +27,25 @@ public class TeacherSimpleTest extends JFrame
     private JTextArea sign5;
     private JTextArea sign6;
     private JTextArea sign7;
-    private String signTest;
+    private JPanel TeacherSimpleTest;
 
-    public TeacherSimpleTest(String sign)
+    public TeacherSimpleTest()
     {
-        JPanel TeacherSimpleTest = new JPanel();
-        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        this.setSize(600,400);
         getContentPane().add(TeacherSimpleTest);
-        TeacherSimpleTest.add(TeacherTest);
-        signTest=sign;
-
-       // setVisible(true);
-
-
+        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        this.setBounds(450, 20, 500,700);
+        setVisible(true);
     }
+
     public void addButtonFinishListener(ActionListener finish)
     {
-
         finishButton.addActionListener(finish);
     }
-    public void showTeacerTestView()
+
+    public void showTeacherTestView()
     {
         this.setVisible(true);
     }
-
-
 
     public String getQue1secondNum() {
         return que1secondNum.getText();
@@ -75,7 +62,6 @@ public class TeacherSimpleTest extends JFrame
     public void setQue1firstNum(JTextField que1firstNum) {
         this.que1firstNum = que1firstNum;
     }
-
 
     public String getQue2firstNum() {
         return que2firstNum.getText();
@@ -177,7 +163,7 @@ public class TeacherSimpleTest extends JFrame
         return sign1.toString();
     }
 
-    public void setSign1() {
+    public void setSign1(String signTest) {
         this.sign1.setText(signTest);
     }
 
@@ -185,7 +171,7 @@ public class TeacherSimpleTest extends JFrame
         return sign2.toString();
     }
 
-    public void setSign2() {
+    public void setSign2(String signTest) {
         this.sign2.setText(signTest);
     }
 
@@ -193,7 +179,7 @@ public class TeacherSimpleTest extends JFrame
         return sign3.toString();
     }
 
-    public void setSign3() {
+    public void setSign3(String signTest) {
         this.sign3.setText(signTest);
     }
 
@@ -201,7 +187,7 @@ public class TeacherSimpleTest extends JFrame
         return sign4.toString();
     }
 
-    public void setSign4() {
+    public void setSign4(String signTest) {
         this.sign4.setText(signTest);
     }
 
@@ -209,7 +195,7 @@ public class TeacherSimpleTest extends JFrame
         return sign5.toString();
     }
 
-    public void setSign5() {
+    public void setSign5(String signTest) {
         this.sign5.setText(signTest);
     }
 
@@ -217,7 +203,7 @@ public class TeacherSimpleTest extends JFrame
         return sign6.toString();
     }
 
-    public void setSign6() {
+    public void setSign6(String signTest) {
         this.sign6.setText(signTest);
     }
 
@@ -225,7 +211,7 @@ public class TeacherSimpleTest extends JFrame
         return sign7.toString();
     }
 
-    public void setSign7() {
+    public void setSign7(String signTest) {
         this.sign7.setText(signTest);
     }
 
@@ -237,5 +223,11 @@ public class TeacherSimpleTest extends JFrame
         this.finishButton = finishButton;
     }
 
+    public void setTeacherSimpleTest(JPanel teacherSimpleTest) {
+        TeacherSimpleTest = teacherSimpleTest;
+    }
 
+    public void exitPage(){
+        this.dispose();
+    }
 }

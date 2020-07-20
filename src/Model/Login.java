@@ -9,12 +9,9 @@ public class Login {
 
     private JButton loginButton;
     private LoginPage loginViewer;
-    UserRepository userRepository;//= UserRepository.getInstance();
+    UserRepository userRepository;
 
-    public Login() throws Exception {
-    }
-    //private static UserRepository SoleInstance;
-
+    public Login() throws Exception { }
 
     public boolean checkUser(String username, String password,String pro) throws Exception
     {
@@ -29,7 +26,5 @@ public class Login {
     {
         return userRepository.getPro(username);
     }
-
-
 
 }

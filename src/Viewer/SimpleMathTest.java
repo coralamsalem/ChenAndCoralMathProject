@@ -36,27 +36,21 @@ public class SimpleMathTest extends JFrame  {
     private JTextArea sign1;
     private JPanel finishTest;
 
-
-
-
     public SimpleMathTest()
     {
         super("Math test");
-        setBounds(300, 300, 800,500);
+        setBounds(450, 20, 500,700);
         getContentPane().add(SimpleTest);
-       // setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
     }
     public void showStudentTestView()
     {
         this.setVisible(true);
     }
-    public void addStudentButtonListener(ActionListener finish)
-    {
 
-        finishTestButton.addActionListener(finish);
-    }
+    public void addStudentButtonListener(ActionListener finish) { finishTestButton.addActionListener(finish); }
+
     public JPanel getFinishTest() {
         return finishTest;
     }
@@ -169,7 +163,6 @@ public class SimpleMathTest extends JFrame  {
         this.que6firstNum.setText(que6firstNum);
     }
 
-
     public JTextArea getQue7secondNum() {
         return que7secondNum;
     }
@@ -187,7 +180,7 @@ public class SimpleMathTest extends JFrame  {
     }
 
     public String getAns1() {
-        return ans1.toString();
+        return ans1.getText().toString();
     }
 
     public void setAns1(JTextField ans1) {
@@ -195,7 +188,7 @@ public class SimpleMathTest extends JFrame  {
     }
 
     public String getAns2() {
-        return ans2.toString();
+        return ans2.getText();
     }
 
     public void setAns2(JTextField ans2) {
@@ -203,7 +196,7 @@ public class SimpleMathTest extends JFrame  {
     }
 
     public String getAns3() {
-        return ans3.toString();
+        return ans3.getText();
     }
 
     public void setAns3(JTextField ans3) {
@@ -211,7 +204,7 @@ public class SimpleMathTest extends JFrame  {
     }
 
     public String getAns4() {
-        return ans4.toString();
+        return ans4.getText();
     }
 
     public void setAns4(JTextField ans4) {
@@ -219,7 +212,7 @@ public class SimpleMathTest extends JFrame  {
     }
 
     public String getAns5() {
-        return ans5.toString();
+        return ans5.getText();
     }
 
     public void setAns5(JTextField ans5) {
@@ -227,7 +220,7 @@ public class SimpleMathTest extends JFrame  {
     }
 
     public String getAns6() {
-        return ans6.toString();
+        return ans6.getText();
     }
 
     public void setAns6(JTextField ans6) {
@@ -235,7 +228,7 @@ public class SimpleMathTest extends JFrame  {
     }
 
     public String getAns7() {
-        return ans7.toString();
+        return ans7.getText();
     }
 
     public void setAns7(JTextField ans7) {
@@ -296,5 +289,9 @@ public class SimpleMathTest extends JFrame  {
 
     public void setSign1(String sign1) {
         this.sign1.append(sign1);
+    }
+
+    public void exitPage(){
+        this.dispose();
     }
 }
